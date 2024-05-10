@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html {
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+            margin: 0;
+            padding: 0;
+            font-weight: normal;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <section class="header-section">
+        <section class="search-section">
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="Pesquisar...">
+                <a href="#"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+            </div>
+            
+            <section class="logo-section">
+                <a href="../home/home.html"><img src="logo.png" id="logo"></a>
+            </section>
+        </section>
+        <section class="nav-bar">
+            <a href="../home/home.html" class="options">Home</a>
+            <button onclick="OpenPopUp()" class="options" id="open-cart">Carrinho</button>
+            <a href="#form" class="options" id="made-form">Fazer formulário</a>
+            <a href="./aboutWe.html" class="options">Sobre Nós</a>
+            <div class="div-nav-burger">
+                <input type="checkbox" id="navBurger" onclick="clickMenu()">
+                <label for="navBurger" class="label-nav-burger"> 
+                    <span class="span-nav-burger"></span>
+                    <span class="span-nav-burger"></span>
+                    <span class="span-nav-burger"></span>
+                </label>
+                <ul class="nav-burger-menu" id="menu">
+                    <li class="nav-burger-square">
+                        <a href="./home.html" class="options-nav-burger">Home</a>
+                    </li>
+                    <li class="nav-burger-square">
+                       <button onclick="OpenPopUp()" id="open-cart-burger" class="options-nav-burger">Carrinho</button>
+                    </li>
+                    <li class="nav-burger-square">
+                        <a href="#form" class="options-nav-burger">Fazer formulário</a>
+                    </li>
+                    <li class="nav-burger-square">
+                        <a href="./aboutWe.html" class="options-nav-burger">Sobre Nós</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </section>
+    
+    <section class="content-section">
+        <section class="contents">
+            <div class="about-div">
+                <div class="title-div">
+                    <h1 id="title-1">Sobre Nós</h1>
+                </div>
+                
+                <div class="text-div">
+                    <p class="paragraf" id="presentation-paragraf">
+                        Esse projeto consiste em um site e-Commerce, foi inspirado nos sites de lojas virtuais independentes 
+                        (que revendem, ou vendem produtos fabricados pelo póprio vendedor). Esse site em específico, consiste em uma loja virtual que revende roupas,
+                        denominada: "Drip Shop". A ideia do site é vender roupas com "drip", que significa roupas estilosas, como marcas conhecidas e até mesmo as não 
+                        conhecidas.
+                    </p>
+                    <br />
+                    <p class="paragraf" id="advertising-paragraf">
+                        Nessa loja, você pode ficar estiloso dos pés a cabeça, já que temos peças de roupas para várias partes 
+                        do corpo. Se tiver interesse de conhecer os nossos produtos, na <a href="../home/home.html" class="links">página inicial</a> da nossa loja você 
+                        pode encontrar nosso catálogo. Caso tenha interesse por algo, não perca tempo! Adicione o item ao 
+                        <a onclick="OpenPopUp()" class="links" id="link-cart">seu carrinho</a> e seja feliz com drip!
+                    </p>
+                    <br />
+                    <p class="paragraf" id="form-paragraf">
+                        Se não estiver buscando produtos em nossa loja, ou realizando sua compra, no final de cada página do nosso site
+                        você poderá encontrar o <a href="#form" class="links">Formulário de Cadastro</a>. Preenchê-lo não tomará mais que 5 minutos do seu tempo, 
+                        já que você só precisa nos dizer seu Nome, E-mail e Telefone, dessa forma poderemos entrar em contato com você
+                        e lhe informar de primeira mão novos produtos, ofertas e promoções. Ao mesmo tempo, você contribui com nossa loja, 
+                        então, porfavor não esqueça de reservar um tempinho seu para preencher o Formulário!
+                    </p>    
+                    <br>
+                    <div class="title-div">
+                        <h1 id="title-2">Como foi Desenvolvido este Site?</h1>
+                    </div>
+
+                    <div>
+                        <p class="paragraf" id="introduction-paragraf">
+                            Esse projeto foi desenvolvido com meus conhecimentos e práticas em HTML5, CSS e JavaScript. A ideia do site foi obtida no curso de Front-end 
+                            do qual faço parte, essa ideia consistia em criar um site e-Commerce com alguns produtos, páginas do site e funções para o usuário/cliente. 
+                            Eu primeiramente tive a ideia de criar um site para uma loja de roupas, depois defini qual seria o nome da loja, e utilizei uma IA para criar
+                            a logo da loja. 
+                        </p>
+                        <br>
+                        <p class="paragraf" id="logo-paragraf">
+                            Na criação da logo, eu dei a descrição que seria para um site de uma loja e-Commerce, disse que o nome da loja seria "Drip Shop",
+                            que o símbolo da loja deveria ser um diamante e a loja estaria em epóca de Natal, então pedi pra que tivesse um gorro de natal 
+                            em cima do diamante. Depois de finalmente achar o que satisfazia o meu pedido, implantei a imagem como logo do site.   
+                        </p>
+                        <br>
+                        <p class="paragraf" id="interface-paragraf">
+                            Na criação da interface do site, tomei como base os sites de lojas virtuais que já vi e fiz o site inteiro no meu estilo.
+                            Utilizando HTML criei o "esqueleto" do site, ou seja, a sua estrutura e organização. Cinco páginas fazem parte do site no total, 
+                            a página inicial "Home", as páginas individuais de cada produto (que são 3 no total) e a página que fala sobre o site: "Sobre Nós". 
+                            Ainda com HTML, inseri e posicionei outros elementos essenciais para o site como a barra de pesquisa, barra de navegação, títulos, textos 
+                            e imagens (de produtos que escolhi para a loja). Juntamente com o HTML, também utilizei o CSS na criação do site, criando seu estilo próprio 
+                            e único. Dessa forma, defini tamanho, posição, fonte, cores e entre outros. Uma das principais definições, foi a mudança dos elementos de 
+                            cada página de acordo com o formato da tela, podendo ser desde uma tela de computador a uma tela de celular. As cores que escolhi para o site
+                            foram branco, cinza e roxo, sendo roxo a cor principal. Com o CSS eu pude complementar a parte do HTML e finalizar a interface do site da 
+                            forma que havia projetado. 
+                        </p>
+                        <br>
+                        <p class="paragraf" id="interation-paragraf">
+                            Para a parte da interação do site, utilizei a linguagem JavaScript para criar e possibilitar o uso de funções como por exemplo: animação do 
+                            menu hambúrger quando do clicado e quando a tela for menor que 800px. Dentre os requisitos mencionados que deviam estar no projeto, estava a 
+                            criação de uma API para armazenar os dados obtidos através do formulário. Portanto, utilizando o site "dronahq", criei uma APÌ e a incrementei  
+                            no código-fonte, então simulei um banco de dados e salvei as informações recebidas do formulário através do método "Post".  
+                        </p>
+                    </div>
+                    <br>
+                    <div class="title-div">
+                        <h1 id="title-2">Quem Sou Eu?</h1>
+                    </div>
+                    <div>
+                        <p class="paragraf" id="aboutMe1-paragraf">
+                            Meu nome é Thiago Mota, sou um desenvolvedor mais familiarizado com a área de Desenvolvimento Web. Tenho conhecimento intermediário na 
+                            linguagem de programação JavaScript, conhecimentos básicos de HTML5 e CSS, e um breve conhecimento das linguagens Java e Python. Sou o 
+                            desenvolvedor desse site, onde dediquei tempo e esforço para torná-lo um projeto avançado, apesar de não ter muita experiência. 
+                            Com isso, aos poucos fui criando o site até ficar completo, muitas vezes precisei pausar para fazer pesquisas, estudar e até refazer 
+                            uma parte inteira do site (as vezes mais que uma). Por fim, com muita dedicação tornei uma ideia abstrata em algo concreto, que conseguiu 
+                            satisfazer minhas expectativas. 
+                        </p>
+                        <br>
+                        <p class="paragraf" id="aboutMe2-paragraf">
+                            Estou no caminho para me tornar um desenvolvedor na área de Tecnologia da Informação
+                            a quase 2 anos. Há 1 ano atrás, me inscrevi no curso de Análise e Desenvolvimento de Sistemas da universidade UNOPAR, no qual continuo 
+                            cursando. Tudo que aprendi até o momento foi por meio de vídeo aulas, slides, documentações. Agora com a faculdade, tenho aprendido em 
+                            um contexto mais profissional e empresarial, o que me auxilia muito ao meu principal objetivo: ingressar como profissional na área de 
+                            Tecnologia da Informação.
+                        </p>
+                        <br>
+                        <p class="paragraf" id="aboutMe3-paragraf">
+                            Apesar de entender que ainda me falta certos conhecimentos e que há muita coisa que ainda não sei, eu não paro de me dedicar e buscar o
+                            máximo de conhecimento e experiência possível. Portanto, eu sempre estou buscando me qualificar mais para poder atuar tranquilamente em 
+                            meu futuro cargo. Dessa forma, sei que será só questão de tempo para conquistar minha primeira experiência profissional, quando eu finalmente
+                            conseguir uma oportunidade, vou me dedicar para dar meu máximo e me tornar um profissional mais qualificado que eu puder. Entretanto, não 
+                            pretendo parar por aí, me dedicarei para chegar muito mais longe e alcançar uma por uma de todas as minhas metas.
+                        </p>
+                        <br>
+                        <p class="paragraf" id="aboutMe4-paragraf">
+                            Se caso quiser entrar em contato, ou saber mais sobre mim, ou acompanhar mais dos meus projetos, acesse minhas redes sociais: 
+                            <a href="https://www.linkedin.com/in/thiago-mota-32332a268/" class="links">Linkedin</a> e 
+                            <a href="https://github.com/ImDevMota" class="links">GitHub</a>. Por lá tem todos meus projetos completos e aqueles que estou desenvolvendo,
+                            estarei sempre trabalhando em novos projetos e detalhando mais por lá. No mais, muito obrigado pela sua presença e espero que também tenha 
+                            tido uma boa experiência nesse site!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="pop-up-container" id="popUp">
+                <div class="pop-up">
+                    <h2 class="title-cart">Itens Adicionados:</h2>
+                    <hr />
+                    <span class="cart-span" id="span1">
+                        <p id="item1" class="items-cart"></p> <p id="price1" class="prices-cart"></p> <input type="number" class="quantity-cart" id="quantityCart1" onchange="ChangeQuantity('1', quantityCart1, price1)"> <button class="btns-remove" onclick="RemoveItem('1', quantityCart1, remove1)" id="remove1">Remover</button><br> 
+                    </span>   
+                    <span class="cart-span" id="span2">
+                        <p id="item2" class="items-cart"></p> <p id="price2" class="prices-cart"></p> <input type="number" class="quantity-cart" id="quantityCart2" onchange="ChangeQuantity('2', quantityCart2, price2)"> <button class="btns-remove" onclick="RemoveItem('2', quantityCart2, remove2)" id="remove2">Remover</button><br>
+                    </span>
+                    <span class="cart-span" id="span3">
+                        <p id="item3" class="items-cart"></p> <p id="price3" class="prices-cart"></p> <input type="number" class="quantity-cart" id="quantityCart3" onchange="ChangeQuantity('3', quantityCart3, price3)"> <button class="btns-remove" onclick="RemoveItem('3', quantityCart3, remove3)" id="remove3">Remover</button><br>
+                    </span>
+                    <span class="cart-span" id="span4">
+                        <p id="item4" class="items-cart"></p> <p id="price4" class="prices-cart"></p> <input type="number" class="quantity-cart" id="quantityCart4" onchange="ChangeQuantity('4', quantityCart4, price4)"> <button class="btns-remove" onclick="RemoveItem('4', quantityCart4, remove4)" id="remove4">Remover</button><br>
+                    </span>       
+                    <span class="cart-span" id="span5">
+                        <p id="item5" class="items-cart"></p> <p id="price5" class="prices-cart"></p> <input type="number" class="quantity-cart" id="quantityCart5" onchange="ChangeQuantity('5', quantityCart5, price5)"> <button class="btns-remove" onclick="RemoveItem('5', quantityCart5, remove5)" id="remove5">Remover</button><br>
+                    </span>
+                    <span class="cart-span" id="span6">
+                        <p id="item6" class="items-cart"></p> <p id="price6" class="prices-cart"></p> <input type="number" class="quantity-cart" id="quantityCart6" onchange="ChangeQuantity('6', quantityCart6, price6)"> <button class="btns-remove" onclick="RemoveItem('6', quantityCart6, remove6)" id="remove6">Remover</button><br>
+                    </span>
+                    <span class="cart-span" id="span7">
+                        <p id="item7" class="items-cart"></p> <p id="price7" class="prices-cart"></p> <input type="number" class="quantity-cart" id="quantityCart7" onchange="ChangeQuantity('7', quantityCart7, price7)"> <button class="btns-remove" onclick="RemoveItem('7', quantityCart7, remove7)" id="remove7">Remover</button><br>
+                    </span>
+                    <span class="cart-span" id="span8">
+                        <p id="item8" class="items-cart"></p> <p id="price8" class="prices-cart"></p> <input type="number" class="quantity-cart" id="quantityCart8" onchange="ChangeQuantity('8', quantityCart8, price8)"> <button class="btns-remove" onclick="RemoveItem('8', quantityCart8, remove8)" id="remove8">Remover</button><br>
+                    </span>
+                    <span class="cart-span" id="span9">
+                        <p id="item9" class="items-cart"></p> <p id="price9" class="prices-cart"></p> <input type="number" class="quantity-cart" id="quantityCart9" onchange="ChangeQuantity('9', quantityCart9, price9)"> <button class="btns-remove" onclick="RemoveItem('9', quantityCart9, remove9)" id="remove9">Remover</button><br>
+                    </span>
+
+                    <div class="total">
+                        <p class="totalP">Valor Total: </p> <p class="totalP" id="totalValue"></p>
+                    </div>
+                    <hr />
+                    <div class="btns">
+                        <button class="btnClose" onclick="ClosePopUp()">Voltar às compras</button>
+                        <button class="btnFinish">Finalizar Compra</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+            <section class="form-section">
+                <div class="form-title">
+                    <h1>Formulário Cadastro de Usuário</h1>
+                </div>
+                <form id="form">
+                    <div class="div-name">
+                        <label for="name">Insira seu Nome:</label>
+                        <input type="text" class="inf-form" id="name">
+                    </div>
+                    <div class="div-email">
+                        <label for="email">Insira seu E-mail:</label>
+                        <input type="text" class="inf-form" id="email">
+                    </div>
+                    <div class="div-phone">
+                        <label for="phone">Insira seu Telefone:</label>
+                        <input type="text" class="inf-form" id="phone">
+                    </div>
+                    <button type="submit" id="send-form">Enviar</button>
+                </form>
+            </section>    
+        </section>
+    </section>
+    <footer>
+        ©Copyright. All rights reserved.
+    </footer>
+    <script>
+        var spanCart = [];
+
+        spanCart[1] = document.querySelector('span#span1');
+        spanCart[2] = document.querySelector('span#span2');
+        spanCart[3] = document.querySelector('span#span3');
+        spanCart[4] = document.querySelector('span#span4');
+        spanCart[5] = document.querySelector('span#span5');
+        spanCart[6] = document.querySelector('span#span6');
+        spanCart[7] = document.querySelector('span#span7');
+        spanCart[8] = document.querySelector('span#span8');
+        spanCart[9] = document.querySelector('span#span9');
+
+        spanCart[1].classList.add('removed');
+        spanCart[2].classList.add('removed');
+        spanCart[3].classList.add('removed');
+        spanCart[4].classList.add('removed');
+        spanCart[5].classList.add('removed');
+        spanCart[6].classList.add('removed');
+        spanCart[7].classList.add('removed');
+        spanCart[8].classList.add('removed');
+        spanCart[9].classList.add('removed');
+
+        var itemCart = [];
+
+        itemCart[1] = document.querySelector('p#item1');
+        itemCart[2] = document.querySelector('p#item2');
+        itemCart[3] = document.querySelector('p#item3');
+        itemCart[4] = document.querySelector('p#item4');
+        itemCart[5] = document.querySelector('p#item5');
+        itemCart[6] = document.querySelector('p#item6');
+        itemCart[7] = document.querySelector('p#item7');
+        itemCart[8] = document.querySelector('p#item8');
+        itemCart[9] = document.querySelector('p#item9');
+
+        var priceCart = [];
+
+        priceCart[1] = document.querySelector('p#price1');
+        priceCart[2] = document.querySelector('p#price2');
+        priceCart[3] = document.querySelector('p#price3');
+        priceCart[4] = document.querySelector('p#price4');
+        priceCart[5] = document.querySelector('p#price5');
+        priceCart[6] = document.querySelector('p#price6');
+        priceCart[7] = document.querySelector('p#price7');
+        priceCart[8] = document.querySelector('p#price8');
+        priceCart[9] = document.querySelector('p#price9');
+
+        var quantityCart = [];
+
+        quantityCart[1] = document.querySelector('input#quantityCart1');
+        quantityCart[2] = document.querySelector('input#quantityCart2');
+        quantityCart[3] = document.querySelector('input#quantityCart3');
+        quantityCart[4] = document.querySelector('input#quantityCart4');
+        quantityCart[5] = document.querySelector('input#quantityCart5');
+        quantityCart[6] = document.querySelector('input#quantityCart6');
+        quantityCart[7] = document.querySelector('input#quantityCart7');
+        quantityCart[8] = document.querySelector('input#quantityCart8');
+        quantityCart[9] = document.querySelector('input#quantityCart9');
+
+        var totalCart = document.querySelector('p#totalValue');
+
+        var cont = 0;
+        var productCart;
+        var priceOriginal = [];
+        var size = []; 
+        var quantity = [];
+        var price = [];
+        
+
+        function clickMenu() {
+            if(menu.style.display == 'block'){
+                menu.style.display = 'none'; 
+                navBurger.checked = false;
+            } else {
+                menu.style.display = 'block'
+                navBurger.checked = true;
+            }
+        }
+
+
+        function OpenPopUp() {
+            CalculateTotal();
+
+            popUp.classList.add('active');
+            let sizeProduct = [];
+            let quantityProduct = [];
+            let priceProduct = [];
+            let product = [];
+
+            
+            product[1] = window.localStorage.getItem('item1');
+            quantityProduct[1] = window.localStorage.getItem('quantidade1');
+            sizeProduct[1] = window.localStorage.getItem('tamanho1');
+            priceProduct[1] = window.localStorage.getItem('preco1');
+            
+            product[2] = window.localStorage.getItem('item2');
+            quantityProduct[2] = window.localStorage.getItem('quantidade2');
+            sizeProduct[2] = window.localStorage.getItem('tamanho2');
+            priceProduct[2] = window.localStorage.getItem('preco2');
+
+            product[3] = window.localStorage.getItem('item3');
+            quantityProduct[3] = window.localStorage.getItem('quantidade3');
+            sizeProduct[3] = window.localStorage.getItem('tamanho3');
+            priceProduct[3] = window.localStorage.getItem('preco3');
+
+            product[4] = window.localStorage.getItem('item4');
+            quantityProduct[4] = window.localStorage.getItem('quantidade4');
+            sizeProduct[4] = window.localStorage.getItem('tamanho4');
+            priceProduct[4] = window.localStorage.getItem('preco4');
+
+            product[5] = window.localStorage.getItem('item5');
+            quantityProduct[5] = window.localStorage.getItem('quantidade5');
+            sizeProduct[5] = window.localStorage.getItem('tamanho5');
+            priceProduct[5] = window.localStorage.getItem('preco5');
+
+            product[6] = window.localStorage.getItem('item6');
+            quantityProduct[6] = window.localStorage.getItem('quantidade6');
+            sizeProduct[6] = window.localStorage.getItem('tamanho6');
+            priceProduct[6] = window.localStorage.getItem('preco6');
+
+            product[7] = window.localStorage.getItem('item7');
+            quantityProduct[7] = window.localStorage.getItem('quantidade7');
+            sizeProduct[7] = window.localStorage.getItem('tamanho7');
+            priceProduct[7] = window.localStorage.getItem('preco7');
+
+            product[8] = window.localStorage.getItem('item8');
+            quantityProduct[8] = window.localStorage.getItem('quantidade8');
+            sizeProduct[8] = window.localStorage.getItem('tamanho8');
+            priceProduct[8] = window.localStorage.getItem('preco8');
+
+            product[9] = window.localStorage.getItem('item9');
+            quantityProduct[9] = window.localStorage.getItem('quantidade9');
+            sizeProduct[9] = window.localStorage.getItem('tamanho9');
+            priceProduct[9] = window.localStorage.getItem('preco9');
+            
+            if(window.localStorage.getItem('item1') != null && window.localStorage.getItem('quantidade1') != null && window.localStorage.getItem('tamanho1') != null && window.localStorage.getItem('preco1') != null) {
+                itemCart[1].innerHTML = `${product[1]} Tam: ${sizeProduct[1]}`;
+                priceCart[1].innerHTML = `R$ ${priceProduct[1]}`;
+                quantityCart[1].value = quantityProduct[1];
+                remove1.style.display = 'block';
+                quantityCart1.style.display = 'block';
+                spanCart[1].classList.remove('removed');
+            }
+
+            if(window.localStorage.getItem('item2') != null && window.localStorage.getItem('quantidade2') != null && window.localStorage.getItem('tamanho2') != null && window.localStorage.getItem('preco2') != null) {
+                itemCart[2].innerHTML = `${product[2]} Tam: ${sizeProduct[2]}`;  
+                priceCart[2].innerHTML = `R$ ${priceProduct[2]}`;
+                quantityCart[2].value = quantityProduct[2];
+                remove2.style.display = 'block';
+                quantityCart2.style.display = 'block';
+                spanCart[2].classList.remove('removed');
+            }
+
+            if(window.localStorage.getItem('item3') != null && window.localStorage.getItem('quantidade3') != null && window.localStorage.getItem('tamanho3') != null && window.localStorage.getItem('preco3') != null) {
+                itemCart[3].innerHTML = `${product[3]} Tam: ${sizeProduct[3]} `;
+                priceCart[3].innerHTML = `R$ ${priceProduct[3]}`; 
+                quantityCart[3].value = quantityProduct[3];
+                remove3.style.display = 'block';
+                quantityCart3.style.display = 'block';
+                spanCart[3].classList.remove('removed');
+            }
+
+            if(window.localStorage.getItem('item4') != null && window.localStorage.getItem('quantidade4') != null && window.localStorage.getItem('tamanho4') != null && window.localStorage.getItem('preco4') != null) {
+                itemCart[4].innerHTML = `${product[4]} Tam: ${sizeProduct[4]} `;
+                priceCart[4].innerHTML = `R$ ${priceProduct[4]}`;
+                quantityCart[4].value = quantityProduct[4];
+                remove4.style.display = 'block';
+                quantityCart4.style.display = 'block';
+                spanCart[4].classList.remove('removed');
+            }
+
+            if(window.localStorage.getItem('item5') != null && window.localStorage.getItem('quantidade5') != null && window.localStorage.getItem('tamanho5') != null && window.localStorage.getItem('preco5') != null) {
+                itemCart[5].innerHTML = `${product[5]} Tam: ${sizeProduct[5]} `;
+                priceCart[5].innerHTML = `R$ ${priceProduct[5]}`;
+                quantityCart[5].value = quantityProduct[5];
+                remove5.style.display = 'block';
+                quantityCart5.style.display = 'block';
+                spanCart[5].classList.remove('removed');
+            }
+
+            if(window.localStorage.getItem('item6') != null && window.localStorage.getItem('quantidade6') != null && window.localStorage.getItem('tamanho6') != null && window.localStorage.getItem('preco6') != null) {
+                itemCart[6].innerHTML = `${product[6]} Tam: ${sizeProduct[6]} `;
+                priceCart[6].innerHTML = `R$ ${priceProduct[6]}`;
+                quantityCart[6].value = quantityProduct[6];
+                remove6.style.display = 'block';
+                quantityCart6.style.display = 'block';
+                spanCart[6].classList.remove('removed');
+            }
+
+            if(window.localStorage.getItem('item7') != null && window.localStorage.getItem('quantidade7') != null && window.localStorage.getItem('tamanho7') != null && window.localStorage.getItem('preco7') != null) {
+                itemCart[7].innerHTML = `${product[7]} Tam: ${sizeProduct[7]} `;
+                priceCart[7].innerHTML = `R$ ${priceProduct[7]}`;
+                quantityCart[7].value = quantityProduct[7];
+                remove7.style.display = 'block';
+                quantityCart7.style.display = 'block';
+                spanCart[7].classList.remove('removed');
+            }
+
+            if(window.localStorage.getItem('item8') != null && window.localStorage.getItem('quantidade8') != null && window.localStorage.getItem('tamanho8') != null && window.localStorage.getItem('preco8') != null) {
+                itemCart[8].innerHTML = `${product[8]} Tam: ${sizeProduct[8]} `;
+                priceCart[8].innerHTML = `R$ ${priceProduct[8]}`;
+                quantityCart[8].value = quantityProduct[8];
+                remove8.style.display = 'block';
+                quantityCart8.style.display = 'block';
+                spanCart[8].classList.remove('removed');
+            }
+
+            if(window.localStorage.getItem('item9') != null && window.localStorage.getItem('quantidade9') != null && window.localStorage.getItem('tamanho9') != null && window.localStorage.getItem('preco9') != null) {
+                itemCart[9].innerHTML = `${product[9]} Tam: ${sizeProduct[9]} `;
+                priceCart[9].innerHTML = `R$ ${priceProduct[9]}`;
+                quantityCart[9].value = quantityProduct[9];
+                remove9.style.display = 'block';
+                quantityCart9.style.display = 'block';
+                spanCart[9].classList.remove('removed');
+            }
+        }
+
+        function ChangeQuantity(num, quantityItem) {
+            let priceItem = window.localStorage.getItem(`precoOrg${num}`);
+            let quantityNew = quantityCart[num].value;
+            let finalPrice;
+            let priceNew;
+
+            priceNew = quantityNew * parseInt(priceItem);
+            console.log(priceItem, priceNew);
+            finalPrice = priceNew.toLocaleString('pt-br', {minimumFractionDigits: 2});
+
+            window.localStorage.removeItem(`preco${num}`);
+            window.localStorage.removeItem(`quantidade${num}`);
+            window.localStorage.setItem(`preco${num}`, finalPrice);
+            window.localStorage.setItem(`quantidade${num}`, quantityNew);
+
+            priceCart[num].innerHTML = `R$ ${finalPrice}`;
+            quantityCart[num].value = quantityNew;
+
+            CalculateTotal();
+            ClosePopUp();
+            OpenPopUp();
+        }
+
+        function CalculateTotal() {
+            let precos = []; 
+            let precoTotal = 0;
+            let precoNum;
+           
+            for (let c = 0; c <= 9; c++) {
+                if(window.localStorage.getItem(`preco${c}`) != null) {
+                    precos[c] = window.localStorage.getItem(`preco${c}`);
+                    precoNum = precos[c].toString().replace(".", "");
+                    precoTotal = precoTotal + parseFloat(precoNum);
+                }
+                
+            }
+
+            totalCart.innerHTML = `R$ ${precoTotal.toLocaleString('pt-br', {minimumFractionDigits: 2})}`;
+           
+        }
+
+        function RemoveItem(num, priceRem, buttonRem) {
+            window.localStorage.removeItem(`item${num}`);
+            window.localStorage.removeItem(`quantidade${num}`);
+            window.localStorage.removeItem(`tamanho${num}`);
+            window.localStorage.removeItem(`preco${num}`);
+            window.localStorage.removeItem(`precoOrg${num}`);
+
+            itemCart[num].innerHTML = null;  
+            priceCart[num].innerHTML = null;
+            quantityCart[num].value = null;
+
+            spanCart[num].classList.add('removed');
+            
+            if (cont != 0) {
+                cont--;
+            }
+            
+            CalculateTotal();
+            ClosePopUp();
+            OpenPopUp();
+        }
+
+        function ClosePopUp() {
+            popUp.classList.remove('active');
+        }
+        
+        function OpenImg(image1, image2, image3) {
+            id1 = document.getElementById(image1);
+            id2 = document.getElementById(image2);
+            id3 = document.getElementById(image3);
+            id1.style.display = 'flex'; 
+            id2.style.display = 'none'; 
+            id3.style.display = 'none';
+        }
+
+        form.addEventListener('submit', event => {
+            event.preventDefault();
+            var name = document.getElementById('name');
+            var email = document.getElementById('email');
+            var phone = document.getElementById('phone');
+
+            let valueName = name.value;
+            let valueEmail = email.value;
+            let valuePhone = phone.value;
+
+            const formData = new FormData(form)
+            formData.append('nome', valueName);
+            formData.append('email', valueEmail);
+            formData.append('telefone', valuePhone);
+
+            const data = Object.fromEntries(formData);
+
+            window.localStorage.setItem('nome', valueName);
+            window.localStorage.setItem('e-mail', valueEmail);
+            window.localStorage.setItem('telefone', valuePhone);
+
+        
+            fetch('https://apigenerator.dronahq.com/api/tTlTqLQD/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            }).then(res => res.json()).then(data => console.log(data))
+        });
+    </script>
+</body>
+</html>

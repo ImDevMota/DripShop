@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaqueta Nocta</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html {
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+            margin: 0;
+            padding: 0;
+            font-weight: normal;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <section class="header-section">
+        <section class="search-section">
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="Pesquisar...">
+                <a href="#"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+            </div>
+            
+            <section class="logo-section">
+                <a href="../home/home.html"><img src="logo.png" id="logo"></a>
+            </section>
+        </section>
+        <section class="nav-bar">
+            <a href="../home/home.html" class="options">Home</a>
+            <button onclick="OpenPopUp()" class="options" id="open-cart">Carrinho</button>
+            <a href="#form" id="made-form" class="options">Fazer formulário</a>
+            <a href="../aboutWe/aboutWe.html" class="options">Sobre Nós</a>
+            <div class="div-nav-burger">
+                <input type="checkbox" id="navBurger" onclick="clickMenu()">
+                <label for="navBurger" class="label-nav-burger"> 
+                    <span class="span-nav-burger"></span>
+                    <span class="span-nav-burger"></span>
+                    <span class="span-nav-burger"></span>
+                </label>
+                <ul class="nav-burger-menu" id="menu">
+                    <li class="nav-burger-square">
+                        <a href="../home/home.html" class="options-nav-burger">Home</a>
+                    </li>
+                    <li class="nav-burger-square">
+                        <button onclick="OpenPopUp()" id="open-cart-burger" class="options-nav-burger">Carrinho</button>
+                    </li>
+                    <li class="nav-burger-square">
+                        <a href="#form" class="options-nav-burger">Fazer formulário</a>
+                    </li>
+                    <li class="nav-burger-square">
+                        <a href="../aboutWe/aboutWe.html" class="options-nav-burger">Sobre Nós</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </section>
+    
+    <section class="content-section">
+        <section class="contents">
+            <div class="market-item">
+                <div class="img1-container" id="i1c">
+                    <a id="img1" class="img"><img src="jaquetaMin.jpg" class="productsImgs"  height="284px" width="450px"></a>
+                </div>
+                <div class="img2-container" id="i2c">
+                    <a id="img2" class="img"><img src="jaqueta2.png" class="productsImgs"  height="284px" width="450px"></a>
+                </div>
+                    <div class="img3-container" id="i3c">
+                        <a id="img3" class="img"><img src="jaqueta3.png" class="productsImgs"  height="284px" width="450px"></a>
+                    </div>
+                <div class="imgs-container">
+                    <a class="imgs" id="imgMin1" onclick="OpenImg('i1c', 'i2c', 'i3c')"><img src="jaquetaMin.jpg" class="productsImgs"  height="246px" width="284px"></a></a>
+                    <a class="imgs" id="imgMin2" onclick="OpenImg('i2c', 'i1c', 'i3c')"><img src="jaqueta2.png" class="productsImgs"  height="246px" width="284px"></a>
+                    <a class="imgs" id="imgMin3" onclick="OpenImg('i3c', 'i1c', 'i2c')"><img src="jaqueta3.png" class="productsImgs" height="246px" width="284px"></a>
+                </div>
+
+                <section class="inf-section">
+                    <div class="titleAndPrice">
+                        <h2 class="titles">Jaqueta Nocta Preta</h1>
+                        <h2 class="prices">R$ 530</h2>
+                    </div>
+                    <div class="size-div">
+                            <h3 class="inf">Tamanho:</h3>
+                            <input type="radio" name="opcao" id="sizeP" value="P"> P
+                            <input type="radio" name="opcao" id="sizeM" value="M"> M
+                            <input type="radio" name="opcao" id="sizeG" value="G"> G
+                            <input type="radio" name="opcao" id="sizeGG" value="GG"> GG
+                    </div>
+                    <div class="quantity-div">
+                        <h3 class="inf">Quantidade:</h3>
+                        <input type="number" id="quantity" value="1">
+                    </div>
+                    <div class="cart-div">
+                        <button id="buttonCart" class="add-cart">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="pop-up-container" id="popUp">
+                        <div class="pop-up">
+                            <h2 class="title-cart">Itens Adicionados:</h2>
+                            <hr />
+                            <span class="cart-span" id="span1">
+                                <p id="item1" class="items-cart"></p> <p id="price1" class="prices-cart"></p> <input type="number" class="quantity-cart" id="quantityCart1" onchange="ChangeQuantity('1', quantityCart1, price1)"> <button class="btns-remove" onclick="RemoveItem('1', quantityCart1, remove1)" id="remove1">Remover</button><br> 
+                            </span>   
+                            <span class="cart-span" id="span2">
+                                <p id="item2" class="items-cart"></p> <p id="price2" class="prices-cart"></p> <input type="number" class="quantity-cart" id="quantityCart2" onchange="ChangeQuantity('2', quantityCart2, price2)"> <button class="btns-remove" onclick="RemoveItem('2', quantityCart2, remove2)" id="remove2">Remover</button><br>
+                            </span>
+                            <span class="cart-span" id="span3">
+                                <p id="item3" class="items-cart"></p> <p id="price3" class="prices-cart"></p> <input type="number" class="quantity-cart" id="quantityCart3" onchange="ChangeQuantity('3', quantityCart3, price3)"> <button class="btns-remove" onclick="RemoveItem('3', quantityCart3, remove3)" id="remove3">Remover</button><br>
+                            </span>
+                            <span class="cart-span" id="span4">
+                                <p id="item4" class="items-cart"></p> <p id="price4" class="prices-cart"></p> <input type="number" class="quantity-cart" id="quantityCart4" onchange="ChangeQuantity('4', quantityCart4, price4)"> <button class="btns-remove" onclick="RemoveItem('4', quantityCart4, remove4)" id="remove4">Remover</button><br>
+                            </span>       
+                            <span class="cart-span" id="span5">
+                                <p id="item5" class="items-cart"></p> <p id="price5" class="prices-cart"></p> <input type="number" class="quantity-cart" id="quantityCart5" onchange="ChangeQuantity('5', quantityCart5, price5)"> <button class="btns-remove" onclick="RemoveItem('5', quantityCart5, remove5)" id="remove5">Remover</button><br>
+                            </span>
+                            <span class="cart-span" id="span6">
+                                <p id="item6" class="items-cart"></p> <p id="price6" class="prices-cart"></p> <input type="number" class="quantity-cart" id="quantityCart6" onchange="ChangeQuantity('6', quantityCart6, price6)"> <button class="btns-remove" onclick="RemoveItem('6', quantityCart6, remove6)" id="remove6">Remover</button><br>
+                            </span>
+                            <span class="cart-span" id="span7">
+                                <p id="item7" class="items-cart"></p> <p id="price7" class="prices-cart"></p> <input type="number" class="quantity-cart" id="quantityCart7" onchange="ChangeQuantity('7', quantityCart7, price7)"> <button class="btns-remove" onclick="RemoveItem('7', quantityCart7, remove7)" id="remove7">Remover</button><br>
+                            </span>
+                            <span class="cart-span" id="span8">
+                                <p id="item8" class="items-cart"></p> <p id="price8" class="prices-cart"></p> <input type="number" class="quantity-cart" id="quantityCart8" onchange="ChangeQuantity('8', quantityCart8, price8)"> <button class="btns-remove" onclick="RemoveItem('8', quantityCart8, remove8)" id="remove8">Remover</button><br>
+                            </span>
+                            <span class="cart-span" id="span9">
+                                <p id="item9" class="items-cart"></p> <p id="price9" class="prices-cart"></p> <input type="number" class="quantity-cart" id="quantityCart9" onchange="ChangeQuantity('9', quantityCart9, price9)"> <button class="btns-remove" onclick="RemoveItem('9', quantityCart9, remove9)" id="remove9">Remover</button><br>
+                            </span>
+
+                            <div class="total">
+                                <p class="totalP">Valor Total: </p> <p class="totalP" id="totalValue"></p>
+                            </div>
+                            <hr />
+                            <div class="btns">
+                                <button class="btnClose" onclick="ClosePopUp()">Voltar às compras</button>
+                                <button class="btnFinish">Finalizar Compra</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>  
+            </div>
+        </section>
+        <section class="form-section">
+            <div class="form-title">
+                <h1>Formulário Cadastro de Usuário</h1>
+            </div>
+            <form id="form">
+                <div class="div-name">
+                    <label for="name">Insira seu Nome:</label>
+                    <input type="text" class="inf-form" id="name">
+                </div>
+                <div class="div-email">
+                    <label for="email">Insira seu E-mail:</label>
+                    <input type="text" class="inf-form" id="email">
+                </div>
+                <div class="div-phone">
+                    <label for="phone">Insira seu Telefone:</label>
+                    <input type="text" class="inf-form" id="phone">
+                </div>
+                <button type="submit" id="send-form">Enviar</button>
+            </form>
+        </section>    
+    </section>
+    <footer>
+        ©Copyright. All rights reserved.
+    </footer>
+    <script>
+        var spanCart = [];
+
+        spanCart[1] = document.querySelector('span#span1');
+        spanCart[2] = document.querySelector('span#span2');
+        spanCart[3] = document.querySelector('span#span3');
+        spanCart[4] = document.querySelector('span#span4');
+        spanCart[5] = document.querySelector('span#span5');
+        spanCart[6] = document.querySelector('span#span6');
+        spanCart[7] = document.querySelector('span#span7');
+        spanCart[8] = document.querySelector('span#span8');
+        spanCart[9] = document.querySelector('span#span9');
+
+        spanCart[1].classList.add('removed');
+        spanCart[2].classList.add('removed');
+        spanCart[3].classList.add('removed');
+        spanCart[4].classList.add('removed');
+        spanCart[5].classList.add('removed');
+        spanCart[6].classList.add('removed');
+        spanCart[7].classList.add('removed');
+        spanCart[8].classList.add('removed');
+        spanCart[9].classList.add('removed');
+
+        var itemCart = [];
+
+        itemCart[1] = document.querySelector('p#item1');
+        itemCart[2] = document.querySelector('p#item2');
+        itemCart[3] = document.querySelector('p#item3');
+        itemCart[4] = document.querySelector('p#item4');
+        itemCart[5] = document.querySelector('p#item5');
+        itemCart[6] = document.querySelector('p#item6');
+        itemCart[7] = document.querySelector('p#item7');
+        itemCart[8] = document.querySelector('p#item8');
+        itemCart[9] = document.querySelector('p#item9');
+
+        var priceCart = [];
+
+        priceCart[1] = document.querySelector('p#price1');
+        priceCart[2] = document.querySelector('p#price2');
+        priceCart[3] = document.querySelector('p#price3');
+        priceCart[4] = document.querySelector('p#price4');
+        priceCart[5] = document.querySelector('p#price5');
+        priceCart[6] = document.querySelector('p#price6');
+        priceCart[7] = document.querySelector('p#price7');
+        priceCart[8] = document.querySelector('p#price8');
+        priceCart[9] = document.querySelector('p#price9');
+
+        var quantityCart = [];
+
+        quantityCart[1] = document.querySelector('input#quantityCart1');
+        quantityCart[2] = document.querySelector('input#quantityCart2');
+        quantityCart[3] = document.querySelector('input#quantityCart3');
+        quantityCart[4] = document.querySelector('input#quantityCart4');
+        quantityCart[5] = document.querySelector('input#quantityCart5');
+        quantityCart[6] = document.querySelector('input#quantityCart6');
+        quantityCart[7] = document.querySelector('input#quantityCart7');
+        quantityCart[8] = document.querySelector('input#quantityCart8');
+        quantityCart[9] = document.querySelector('input#quantityCart9');
+
+        var totalCart = document.querySelector('p#totalValue');
+
+        var cont = 0;
+        var productCart;
+        var priceOriginal = [];
+        var size = []; 
+        var quantity = [];
+        var price = [];
+        
+
+        function clickMenu() {
+            if(menu.style.display == 'block'){
+                menu.style.display = 'none'; 
+                navBurger.checked = false;
+            } else {
+                menu.style.display = 'block'
+                navBurger.checked = true;
+            }
+        }
+
+
+        function OpenPopUp() {
+            CalculateTotal();
+
+            popUp.classList.add('active');
+            let sizeProduct = [];
+            let quantityProduct = [];
+            let priceProduct = [];
+            let product = [];
+
+            
+            product[1] = window.localStorage.getItem('item1');
+            quantityProduct[1] = window.localStorage.getItem('quantidade1');
+            sizeProduct[1] = window.localStorage.getItem('tamanho1');
+            priceProduct[1] = window.localStorage.getItem('preco1');
+            
+            product[2] = window.localStorage.getItem('item2');
+            quantityProduct[2] = window.localStorage.getItem('quantidade2');
+            sizeProduct[2] = window.localStorage.getItem('tamanho2');
+            priceProduct[2] = window.localStorage.getItem('preco2');
+
+            product[3] = window.localStorage.getItem('item3');
+            quantityProduct[3] = window.localStorage.getItem('quantidade3');
+            sizeProduct[3] = window.localStorage.getItem('tamanho3');
+            priceProduct[3] = window.localStorage.getItem('preco3');
+
+            product[4] = window.localStorage.getItem('item4');
+            quantityProduct[4] = window.localStorage.getItem('quantidade4');
+            sizeProduct[4] = window.localStorage.getItem('tamanho4');
+            priceProduct[4] = window.localStorage.getItem('preco4');
+
+            product[5] = window.localStorage.getItem('item5');
+            quantityProduct[5] = window.localStorage.getItem('quantidade5');
+            sizeProduct[5] = window.localStorage.getItem('tamanho5');
+            priceProduct[5] = window.localStorage.getItem('preco5');
+
+            product[6] = window.localStorage.getItem('item6');
+            quantityProduct[6] = window.localStorage.getItem('quantidade6');
+            sizeProduct[6] = window.localStorage.getItem('tamanho6');
+            priceProduct[6] = window.localStorage.getItem('preco6');
+
+            product[7] = window.localStorage.getItem('item7');
+            quantityProduct[7] = window.localStorage.getItem('quantidade7');
+            sizeProduct[7] = window.localStorage.getItem('tamanho7');
+            priceProduct[7] = window.localStorage.getItem('preco7');
+
+            product[8] = window.localStorage.getItem('item8');
+            quantityProduct[8] = window.localStorage.getItem('quantidade8');
+            sizeProduct[8] = window.localStorage.getItem('tamanho8');
+            priceProduct[8] = window.localStorage.getItem('preco8');
+
+            product[9] = window.localStorage.getItem('item9');
+            quantityProduct[9] = window.localStorage.getItem('quantidade9');
+            sizeProduct[9] = window.localStorage.getItem('tamanho9');
+            priceProduct[9] = window.localStorage.getItem('preco9');
+            
+            if(window.localStorage.getItem('item1') != null && window.localStorage.getItem('quantidade1') != null && window.localStorage.getItem('tamanho1') != null && window.localStorage.getItem('preco1') != null) {
+                itemCart[1].innerHTML = `${product[1]} Tam: ${sizeProduct[1]}`;
+                priceCart[1].innerHTML = `R$ ${priceProduct[1]}`;
+                quantityCart[1].value = quantityProduct[1];
+                remove1.style.display = 'block';
+                quantityCart1.style.display = 'block';
+                spanCart[1].classList.remove('removed');
+            }
+
+            if(window.localStorage.getItem('item2') != null && window.localStorage.getItem('quantidade2') != null && window.localStorage.getItem('tamanho2') != null && window.localStorage.getItem('preco2') != null) {
+                itemCart[2].innerHTML = `${product[2]} Tam: ${sizeProduct[2]}`;  
+                priceCart[2].innerHTML = `R$ ${priceProduct[2]}`;
+                quantityCart[2].value = quantityProduct[2];
+                remove2.style.display = 'block';
+                quantityCart2.style.display = 'block';
+                spanCart[2].classList.remove('removed');
+            }
+
+            if(window.localStorage.getItem('item3') != null && window.localStorage.getItem('quantidade3') != null && window.localStorage.getItem('tamanho3') != null && window.localStorage.getItem('preco3') != null) {
+                itemCart[3].innerHTML = `${product[3]} Tam: ${sizeProduct[3]} `;
+                priceCart[3].innerHTML = `R$ ${priceProduct[3]}`; 
+                quantityCart[3].value = quantityProduct[3];
+                remove3.style.display = 'block';
+                quantityCart3.style.display = 'block';
+                spanCart[3].classList.remove('removed');
+            }
+
+            if(window.localStorage.getItem('item4') != null && window.localStorage.getItem('quantidade4') != null && window.localStorage.getItem('tamanho4') != null && window.localStorage.getItem('preco4') != null) {
+                itemCart[4].innerHTML = `${product[4]} Tam: ${sizeProduct[4]} `;
+                priceCart[4].innerHTML = `R$ ${priceProduct[4]}`;
+                quantityCart[4].value = quantityProduct[4];
+                remove4.style.display = 'block';
+                quantityCart4.style.display = 'block';
+                spanCart[4].classList.remove('removed');
+            }
+
+            if(window.localStorage.getItem('item5') != null && window.localStorage.getItem('quantidade5') != null && window.localStorage.getItem('tamanho5') != null && window.localStorage.getItem('preco5') != null) {
+                itemCart[5].innerHTML = `${product[5]} Tam: ${sizeProduct[5]} `;
+                priceCart[5].innerHTML = `R$ ${priceProduct[5]}`;
+                quantityCart[5].value = quantityProduct[5];
+                remove5.style.display = 'block';
+                quantityCart5.style.display = 'block';
+                spanCart[5].classList.remove('removed');
+            }
+
+            if(window.localStorage.getItem('item6') != null && window.localStorage.getItem('quantidade6') != null && window.localStorage.getItem('tamanho6') != null && window.localStorage.getItem('preco6') != null) {
+                itemCart[6].innerHTML = `${product[6]} Tam: ${sizeProduct[6]} `;
+                priceCart[6].innerHTML = `R$ ${priceProduct[6]}`;
+                quantityCart[6].value = quantityProduct[6];
+                remove6.style.display = 'block';
+                quantityCart6.style.display = 'block';
+                spanCart[6].classList.remove('removed');
+            }
+
+            if(window.localStorage.getItem('item7') != null && window.localStorage.getItem('quantidade7') != null && window.localStorage.getItem('tamanho7') != null && window.localStorage.getItem('preco7') != null) {
+                itemCart[7].innerHTML = `${product[7]} Tam: ${sizeProduct[7]} `;
+                priceCart[7].innerHTML = `R$ ${priceProduct[7]}`;
+                quantityCart[7].value = quantityProduct[7];
+                remove7.style.display = 'block';
+                quantityCart7.style.display = 'block';
+                spanCart[7].classList.remove('removed');
+            }
+
+            if(window.localStorage.getItem('item8') != null && window.localStorage.getItem('quantidade8') != null && window.localStorage.getItem('tamanho8') != null && window.localStorage.getItem('preco8') != null) {
+                itemCart[8].innerHTML = `${product[8]} Tam: ${sizeProduct[8]} `;
+                priceCart[8].innerHTML = `R$ ${priceProduct[8]}`;
+                quantityCart[8].value = quantityProduct[8];
+                remove8.style.display = 'block';
+                quantityCart8.style.display = 'block';
+                spanCart[8].classList.remove('removed');
+            }
+
+            if(window.localStorage.getItem('item9') != null && window.localStorage.getItem('quantidade9') != null && window.localStorage.getItem('tamanho9') != null && window.localStorage.getItem('preco9') != null) {
+                itemCart[9].innerHTML = `${product[9]} Tam: ${sizeProduct[9]} `;
+                priceCart[9].innerHTML = `R$ ${priceProduct[9]}`;
+                quantityCart[9].value = quantityProduct[9];
+                remove9.style.display = 'block';
+                quantityCart9.style.display = 'block';
+                spanCart[9].classList.remove('removed');
+            }
+        }
+
+        function ChangeQuantity(num, quantityItem) {
+            let priceItem = window.localStorage.getItem(`precoOrg${num}`);
+            let quantityNew = quantityCart[num].value;
+            let finalPrice;
+            let priceNew;
+
+            priceNew = quantityNew * parseInt(priceItem);
+            finalPrice = priceNew.toLocaleString('pt-br', {minimumFractionDigits: 2});
+            
+            window.localStorage.removeItem(`preco${num}`);
+            window.localStorage.removeItem(`quantidade${num}`);
+            window.localStorage.setItem(`preco${num}`, finalPrice);
+            window.localStorage.setItem(`quantidade${num}`, quantityNew);
+
+            priceCart[num].innerHTML = `R$ ${finalPrice}`;
+            quantityCart[num].value = quantityNew;
+
+            CalculateTotal();
+            ClosePopUp();
+            OpenPopUp();
+        }
+
+        function CalculateTotal() {
+            let precos = []; 
+            let precoTotal = 0;
+            let precoNum;
+           
+            for (let c = 0; c <= 9; c++) {
+                if(window.localStorage.getItem(`preco${c}`) != null) {
+                    precos[c] = window.localStorage.getItem(`preco${c}`);
+                    precoNum = precos[c].toString().replace(".", "");
+                    precoTotal = precoTotal + parseFloat(precoNum);
+                }
+                
+            }
+
+            totalCart.innerHTML = `R$ ${precoTotal.toLocaleString('pt-br', {minimumFractionDigits: 2})}`;
+           
+        }
+
+        function RemoveItem(num, priceRem, buttonRem) {
+            window.localStorage.removeItem(`item${num}`);
+            window.localStorage.removeItem(`quantidade${num}`);
+            window.localStorage.removeItem(`tamanho${num}`);
+            window.localStorage.removeItem(`preco${num}`);
+            window.localStorage.removeItem(`precoOrg${num}`);
+
+            itemCart[num].innerHTML = null;  
+            priceCart[num].innerHTML = null;
+            quantityCart[num].value = null;
+
+            spanCart[num].classList.add('removed');
+            
+            if (cont != 0) {
+                cont--;
+            }
+            
+            CalculateTotal();
+            ClosePopUp();
+            OpenPopUp();
+        }
+
+        function ClosePopUp() {
+            popUp.classList.remove('active');
+        }
+        
+        function OpenImg(image1, image2, image3) {
+            id1 = document.getElementById(image1);
+            id2 = document.getElementById(image2);
+            id3 = document.getElementById(image3);
+            id1.style.display = 'flex'; 
+            id2.style.display = 'none'; 
+            id3.style.display = 'none';
+        }
+
+        buttonCart.addEventListener('click', event => {
+            event.preventDefault();
+            let priceNum
+
+            productCart = 'Jaqueta Nocta Preta';
+            quantity[cont] = document.getElementById('quantity');
+            priceOriginal[cont] = 530;
+
+            price[cont] = quantity[cont].value * 530
+            
+            if (sizeP.checked == true) {
+                size[cont] = document.getElementById('sizeP');
+            } else if (sizeM.checked == true) {
+                size[cont] = document.getElementById('sizeM');
+            } else if (sizeG.checked == true) {
+                size[cont] = document.getElementById('sizeG');
+            } else if (sizeGG.checked == true) {
+                size[cont] = document.getElementById('sizeGG');
+            } 
+
+            let valueQuantity = quantity[cont].value;
+            let valueSize = size[cont].value;
+            let priceOrg = priceOriginal[cont];
+            let priceReal = price[cont].toLocaleString('pt-br', {minimumFractionDigits: 2}); 
+            
+            if(window.localStorage.getItem('item1') != null && window.localStorage.getItem('quantidade1') != null && window.localStorage.getItem('tamanho1') != null && window.localStorage.getItem('preco1')) {
+                cont = 1;
+                if (window.localStorage.getItem('item2') != null && window.localStorage.getItem('quantidade2') != null && window.localStorage.getItem('tamanho2') != null && window.localStorage.getItem('preco2')) {
+                    cont = 2;
+                    if (window.localStorage.getItem('item3') != null && window.localStorage.getItem('quantidade3') != null && window.localStorage.getItem('tamanho3') != null && window.localStorage.getItem('preco3')) {
+                        cont = 3;
+                        if (window.localStorage.getItem('item4') != null && window.localStorage.getItem('quantidade4') != null && window.localStorage.getItem('tamanho4') != null && window.localStorage.getItem('preco4')) {
+                            cont = 4;
+                            if (window.localStorage.getItem('item5') != null && window.localStorage.getItem('quantidade5') != null && window.localStorage.getItem('tamanho5') != null && window.localStorage.getItem('preco5')) {
+                                cont = 5;
+                                if (window.localStorage.getItem('item6') != null && window.localStorage.getItem('quantidade6') != null && window.localStorage.getItem('tamanho6') != null && window.localStorage.getItem('preco6')) {
+                                    cont = 6;
+                                    if (window.localStorage.getItem('item7') != null && window.localStorage.getItem('quantidade7') != null && window.localStorage.getItem('tamanho7') != null && window.localStorage.getItem('preco7')) {
+                                        cont = 7;
+                                        if (window.localStorage.getItem('item8') != null && window.localStorage.getItem('quantidade8') != null && window.localStorage.getItem('tamanho8') != null && window.localStorage.getItem('preco8')) {
+                                            cont = 8;
+                                            if (window.localStorage.getItem('item9') != null && window.localStorage.getItem('quantidade9') != null && window.localStorage.getItem('tamanho9') != null && window.localStorage.getItem('preco9')) {
+                                                cont = 9;
+                                            }   
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            switch(cont) {
+                case 0: 
+                    window.localStorage.setItem('item1', productCart);
+                    window.localStorage.setItem('quantidade1', valueQuantity);
+                    window.localStorage.setItem('tamanho1', valueSize);
+                    window.localStorage.setItem('preco1', priceReal);
+                    window.localStorage.setItem('precoOrg1', priceOrg);
+                    cont++;
+                    break;
+                case 1: 
+                    window.localStorage.setItem('item2', productCart);
+                    window.localStorage.setItem('quantidade2', valueQuantity);
+                    window.localStorage.setItem('tamanho2', valueSize);
+                    window.localStorage.setItem('preco2', priceReal);
+                    window.localStorage.setItem('precoOrg2', priceOrg);
+                    cont++;
+                    break;
+                case 2: 
+                    window.localStorage.setItem('item3', productCart);
+                    window.localStorage.setItem('quantidade3', valueQuantity);
+                    window.localStorage.setItem('tamanho3', valueSize);
+                    window.localStorage.setItem('preco3', priceReal);
+                    window.localStorage.setItem('precoOrg3', priceOrg);
+                    cont++;
+                    break;
+                case 3: 
+                    window.localStorage.setItem('item4', productCart);
+                    window.localStorage.setItem('quantidade4', valueQuantity);
+                    window.localStorage.setItem('tamanho4', valueSize);
+                    window.localStorage.setItem('preco4', priceReal);
+                    window.localStorage.setItem('precoOrg4', priceOrg);
+                    cont++;
+                    break;
+                case 4: 
+                    window.localStorage.setItem('item5', productCart);
+                    window.localStorage.setItem('quantidade5', valueQuantity);
+                    window.localStorage.setItem('tamanho5', valueSize);
+                    window.localStorage.setItem('preco5', priceReal);
+                    window.localStorage.setItem('precoOrg5', priceOrg);
+                    cont++;
+                    break;
+                case 5: 
+                    window.localStorage.setItem('item6', productCart);
+                    window.localStorage.setItem('quantidade6', valueQuantity);
+                    window.localStorage.setItem('tamanho6', valueSize);
+                    window.localStorage.setItem('preco6', priceReal);
+                    window.localStorage.setItem('precoOrg6', priceOrg);
+                    cont++;
+                    break;
+                case 6: 
+                    window.localStorage.setItem('item7', productCart);
+                    window.localStorage.setItem('quantidade7', valueQuantity);
+                    window.localStorage.setItem('tamanho7', valueSize);
+                    window.localStorage.setItem('preco7', priceReal);
+                    window.localStorage.setItem('precoOrg7', priceOrg);
+                    cont++;
+                    break;
+                case 7: 
+                    window.localStorage.setItem('item8', productCart);
+                    window.localStorage.setItem('quantidade8', valueQuantity);
+                    window.localStorage.setItem('tamanho8', valueSize);
+                    window.localStorage.setItem('preco8', priceReal);
+                    window.localStorage.setItem('precoOrg8', priceOrg);
+                    cont++;
+                    break;
+                case 8: 
+                    window.localStorage.setItem('item9', productCart);
+                    window.localStorage.setItem('quantidade9', valueQuantity);
+                    window.localStorage.setItem('tamanho9', valueSize);
+                    window.localStorage.setItem('preco9', priceReal);
+                    window.localStorage.setItem('precoOrg9', priceOrg);
+                    cont++;
+                    break;
+                case 9: 
+                    window.alert('Você só pode adicionar 9 items ao seu carrinho!');
+                    break;
+            }
+
+            OpenPopUp();
+        });
+
+        form.addEventListener('submit', event => {
+            event.preventDefault();
+            var name = document.getElementById('name');
+            var email = document.getElementById('email');
+            var phone = document.getElementById('phone');
+
+            let valueName = name.value;
+            let valueEmail = email.value;
+            let valuePhone = phone.value;
+
+            const formData = new FormData(form);
+            formData.append('nome', valueName);
+            formData.append('email', valueEmail);
+            formData.append('telefone', valuePhone);
+
+            const data = Object.fromEntries(formData);
+
+            window.localStorage.setItem('nome', valueName);
+            window.localStorage.setItem('e-mail', valueEmail);
+            window.localStorage.setItem('telefone', valuePhone);
+
+        
+            fetch('https://apigenerator.dronahq.com/api/tTlTqLQD/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            }).then(res => res.json()).then(data => console.log(data))
+        });
+    </script>
+</body>
+</html>
